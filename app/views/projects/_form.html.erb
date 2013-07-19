@@ -2,30 +2,11 @@
   <fieldset>
   <%= f.error_notification %>
 
-
+    <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
     <%= f.input :name %>
     <%= f.input :description, :as => :text %>
     <%= f.input :tags %>
-
-    <div class="input radio optional">
-      <div class="row">
-        <div class="large-3 columns">
-          <%= f.label :completed %>
-        </div>
-        <div class="large-3 columns">
-          <div class="switch small radius">
-            <%= f.radio_button :completed, :completed, :name => "switch-z" %>
-            <label for="z" onclick="">Off</label>
-
-            <%= f.radio_button :completed, :completed, :name => "switch-z" %>
-            <label for="z1" onclick="">On</label>
-
-            <span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <%= f.input :completed %>
     <%= f.input :in_progress %>
 
     <div class="actions">

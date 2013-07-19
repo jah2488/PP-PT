@@ -24,6 +24,7 @@ gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'responders', github: 'plataformatec/responders'
 gem 'zurb-foundation'
 gem 'simple_form', '~> 3.0.0.rc'
+gem 'devise', '~> 3.0.0'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -32,14 +33,17 @@ end
 
 
 group :test do
-  gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'factory_girl'
+  gem 'poltergeist'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
   gem 'capybara'
 end
 
 group :development, :test do
   gem 'rspec'
+  gem 'rspec-rails'
   gem 'pry'
   gem 'xray-rails'
   gem 'better_errors'
@@ -50,6 +54,7 @@ group :development, :test do
   gem 'meta_request', '~> 0.2.1'
   gem 'quiet_assets'
   gem 'annotate', "~> 2.5.0"
+  gem 'railroady'
 end
 
 # Use ActiveModel has_secure_password

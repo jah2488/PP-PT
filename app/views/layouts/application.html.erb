@@ -18,28 +18,48 @@
 
   <body>
     <div id='content-wrapper'>
-      <nav class="top-bar">
-        <ul class="title-area">
-          <!-- Title Area -->
-          <li class="name">
-            <h1><a href="#">Top Bar Title </a></h1>
-          </li>
-          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-        </ul>
-
-        <section class="top-bar-section">
-          <ul class="right">
-            <li class="divider"></li>
-            <li class="active"><a href="#">Main Item 1</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Main Item 2</a></li>
-            <li class="divider"></li>
+      <div class=" sticky">
+        <nav class="top-bar" style="margin:0;">
+          <ul class="title-area">
+            <!-- Title Area -->
+            <li class="name">
+              <h1><a href="#">pp&pt</a></h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
           </ul>
-        </section>
-      </nav>
-      <div class='row'>
-        <div class='large-12 columns'>
+
+          <section class="top-bar-section">
+            <ul class="right">
+              <li class="divider"></li>
+              <li class="active"><a href="#">Main Item 1</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Main Item 2</a></li>
+              <li class="divider"></li>
+            </ul>
+          </section>
+        </nav>
+      </div>
+
+      <div class="row">
+        <div class="large-6 columns">
+          <% if notice %>
+            <div data-alert class="alert-box radius">
+              <%= notice %>
+              <a href="#" class="close">&times;</a>
+            </div>
+          <% end %>
+          <% if alert %>
+            <div data-alert class="alert-box alert radius">
+              <%= alert %>
+              <a href="#" class="close">&times;</a>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
           <%= yield %>
         </div>
       </div>

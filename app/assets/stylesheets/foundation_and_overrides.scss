@@ -1272,6 +1272,12 @@ $global-rounded: 1000px;
 
 @import 'foundation';
 
+.centered {
+  text-align:center;
+}
+.mint {
+  background-color:#33CCBE;
+}
 
 textarea, input {
   border-radius: 5px;

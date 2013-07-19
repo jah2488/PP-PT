@@ -1,0 +1,21 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+header.home {
+  padding-top: 1.5em;
+
+  h1 {
+    font-variant:small-caps;
+  }
+
+  h1, h4, p {
+    color: #FFFFFF;
+  }
+
+}
+
+.large-stripe {
+  height: 4000px;
+}
+

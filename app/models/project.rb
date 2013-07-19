@@ -13,5 +13,9 @@
 #
 
 class Project < ActiveRecord::Base
+  validates :user_id, :presence => true
   validates :name, :presence => true
+  belongs_to :user
+  has_many :tasks
+  has_many :actions, :through => :tasks, :source => :action_items
 end

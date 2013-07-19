@@ -1,5 +1,18 @@
 CourseTracker::Application.routes.draw do
-  resources :projects
+
+  devise_for :users
+
+  shallow do
+    resources :projects do
+      resources :tasks do
+        resources :action_items, :path => :actions, :as => :actions
+      end
+    end
+  end
+  #resources :tasks
+  #resources :action_items, :path => :actions, :as => :actions
+
+  root 'home#index'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

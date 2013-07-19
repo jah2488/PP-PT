@@ -44,6 +44,7 @@ GEM
       rake
     arel (4.0.0)
     atomic (1.1.10)
+    bcrypt-ruby (3.1.1)
     better_errors (0.9.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -71,6 +72,17 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     columnize (0.3.6)
+    cucumber (1.3.4)
+      builder (>= 2.1.2)
+      diff-lcs (>= 1.1.3)
+      gherkin (~> 2.12.0)
+      multi_json (~> 1.7.5)
+      multi_test (~> 0.0.1)
+    cucumber-rails (1.3.0)
+      capybara (>= 1.1.2)
+      cucumber (>= 1.1.8)
+      nokogiri (>= 1.5.0)
+    database_cleaner (0.7.2)
     debug_inspector (0.0.2)
     debugger (1.6.1)
       columnize (>= 0.3.1)
@@ -78,17 +90,28 @@ GEM
       debugger-ruby_core_source (~> 1.2.3)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.3)
+    devise (3.0.0)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      warden (~> 1.2.3)
     diff-lcs (1.2.4)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
+    faye-websocket (0.4.7)
+      eventmachine (>= 0.12.0)
     ffi (1.6.0)
+    gherkin (2.12.0)
+      multi_json (~> 1.3)
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hike (1.2.3)
+    http_parser.rb (0.5.3)
     i18n (0.6.4)
     jbuilder (1.4.2)
       activesupport (>= 3.0.0)
@@ -112,7 +135,15 @@ GEM
     mime-types (1.23)
     minitest (4.7.5)
     multi_json (1.7.7)
+    multi_test (0.0.1)
     nokogiri (1.5.6)
+    orm_adapter (0.4.0)
+    poltergeist (1.0.3)
+      capybara (~> 1.1)
+      childprocess (~> 0.3)
+      faye-websocket (~> 0.4.4)
+      http_parser.rb (~> 0.5.3)
+      multi_json (~> 1.0)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -125,6 +156,7 @@ GEM
       rack (>= 0.9.1)
     rack-test (0.6.2)
       rack (>= 1.0)
+    railroady (1.1.0)
     rails (4.0.0)
       actionmailer (= 4.0.0)
       actionpack (= 4.0.0)
@@ -200,6 +232,8 @@ GEM
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     uniform_notifier (1.2.0)
+    warden (1.2.3)
+      rack (>= 1.0)
     websocket (1.0.7)
     xpath (0.1.4)
       nokogiri (~> 1.3)
@@ -219,15 +253,20 @@ DEPENDENCIES
   bullet
   capybara
   coffee-rails (~> 4.0.0)
+  cucumber-rails
+  database_cleaner
   debugger
+  devise (~> 3.0.0)
   factory_girl
   inherited_resources!
   jbuilder (~> 1.2)
   jquery-rails
   lol_dba
   meta_request (~> 0.2.1)
+  poltergeist
   pry
   quiet_assets
+  railroady
   rails (~> 4.0.0)
   responders!
   rspec

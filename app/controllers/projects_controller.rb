@@ -1,7 +1,7 @@
-class ProjectsController < InheritedResources::Base
+class ProjectsController < ResourceController
 
   private
   def permitted_params
-    params.permit(:project => %i{name description tags completed in_progress})
+    params.permit(:project => %i{user_id name description tags completed in_progress})
   end
 end
