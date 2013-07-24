@@ -1,4 +1,4 @@
-<%= simple_form_for(@project) do |f| %>
+<%= simple_form_for(@project ||= Project.new) do |f| %>
   <fieldset>
   <%= f.error_notification %>
 

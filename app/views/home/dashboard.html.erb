@@ -1,0 +1,38 @@
+<div id='dashboard-wrapper'>
+  <div class='row'>
+    <div id='project-list' class="large-8 columns">
+      <% @projects.each do |project| %>
+        <h3 class='project'><%= project.name %><small><%= link_to "Add Task", "#", :'data-reveal-id' => "add-task-#{project.id}", :class => "button tiny radius right" %></small><span class='progress right'><span class='meter' style='width:<%= "#{project.progress}%" %>;'><%= "#{project.progress}%" %></span></span></h3>
+        <div>
+          <div id="tasks-<%=project.id%>">
+            <div id='add-task-<%=project.id%>' class='reveal-modal'>
+              <%= render :partial => 'tasks/form', :locals => { :project => project }  %>
+            </div>
+            <% project.tasks.each do |task| %>
+              <h4 class='task'><%= task.name %><small><%= link_to "Add Action", "#", :'data-reveal-id' => "add-action-#{task.id}", :class => "button tiny radius right" %></small></h4>
+              <div>
+                <div id="actions-<%=task.id%>">
+                  <div id='add-action-<%=task.id%>' class='reveal-modal'>
+                    <%= render :partial => 'action_items/form', :locals => { :task => task }  %>
+                  </div>
+                  <% task.actions.each do |action| %>
+                    <h5 class='action'><%= action.name %></h5>
+                    <div></div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="large-4 columns">
+      <div class='panel'>
+        <%= link_to "Add Project", "#", :'data-reveal-id' => 'add-project-modal', :class => "button large radius" %>
+      </div>
+    </div>
+  </div>
+  <div id='add-project-modal' class='reveal-modal'>
+    <%= render :partial => 'projects/form' %>
+  </div>
+</div>

@@ -2,10 +2,13 @@ CourseTracker::Application.routes.draw do
 
   devise_for :users
 
+  get 'dashboard' => 'home#dashboard', :as => :dashboard
+
   shallow do
     resources :projects do
       resources :tasks do
         resources :action_items, :path => :actions, :as => :actions
+        resources :action_items
       end
     end
   end

@@ -1,8 +1,9 @@
-<%= simple_form_for(@action_item) do |f| %>
+<%= simple_form_for([task, @action_item ||= ActionItem.new]) do |f| %>
   <fieldset>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :task_id, :as => :hidden, :input_html => { :value => task.id } %>
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :completed %>

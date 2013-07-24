@@ -19,3 +19,44 @@ header.home {
   height: 4000px;
 }
 
+#project-list {
+  background: #DDD;
+  border-radius: 3px;
+  border: 1px solid #CCC;
+  padding: 0px;
+}
+
+#dashboard-wrapper {
+  padding: 5px;
+  margin-top: 50px;
+}
+
+.project {
+  height: 75px;
+  background: #555;
+  color: white;
+  font-size:2.5em;
+  padding: 10px;
+  margin-bottom:0px;
+}
+
+.task {
+  height: 40px;
+  background: #999;
+  color: white;
+  font-size:1.5em;
+  padding: 5px;
+  margin:0px;
+}
+
+.action {
+  height: 25px;
+  font-size:0.95em;
+  color: #777;
+  background: #CCC;
+  padding: 5px;
+  padding-left: 10px;
+  margin: 0px;
+}
+
+h2,h3,h4,h5 { cursor: pointer; }
