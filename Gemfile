@@ -1,7 +1,13 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 group :doc do
   gem 'sdoc', '~> 0.3.20', :require => false
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 group :test do
@@ -49,7 +55,7 @@ group :development do
 end
 
 gem 'rails'               , '~> 4.0.0'
-gem 'sqlite3'             , '~> 1.3.7'
+gem 'pg'
 gem 'sass-rails'          , '~> 4.0.0'
 gem 'uglifier'            , '~> 2.1.2'
 gem 'coffee-rails'        , '~> 4.0.0'
